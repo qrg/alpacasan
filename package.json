@@ -1,0 +1,52 @@
+{
+  "name": "alpacasan",
+  "version": "0.0.1",
+  "description": "a bot which integrate slack and discord",
+  "main": "./dist/index.js",
+  "author": "qrg <qualle.rhythmus+d@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "12.x",
+    "yarn": ">=1.22.4 <2.0.0"
+  },
+  "scripts": {
+    "start": "yarn build && node ./dist/index.js",
+    "start:dev": "ts-node ./src/index.ts",
+    "build": "tsc -p .",
+    "build:test": "tsc -p . --noEmit",
+    "lint": "yarn eslint && yarn prettier",
+    "lint:fix": "yarn eslint:fix && yarn prettier:fix",
+    "test": "yarn lint && yarn build:test && yarn jest",
+    "eslint": "eslint --ext .ts --ignore-path .gitignore .",
+    "eslint:fix": "eslint --ext .ts --ignore-path .gitignore . --fix",
+    "prettier": "prettier --check './**/*.(js|ts|json|yaml|yml|md)'",
+    "prettier:fix": "prettier --write './**/*.(js|ts|json|yaml|yml|md)'"
+  },
+  "dependencies": {
+    "@slack/bolt": "^2.4.1",
+    "chalk": "^4.1.0",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "eventmit": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.5",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.5.2",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}

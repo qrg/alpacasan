@@ -1,0 +1,58 @@
+root: true
+env:
+  node: true
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+  project: tsconfig.json
+plugins:
+  - '@typescript-eslint'
+  - jest
+extends:
+  - eslint:recommended
+  - standard
+  - prettier
+  - plugin:@typescript-eslint/recommended
+  - plugin:jest/recommended
+rules:
+  no-unused-vars:
+    - off
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - argsIgnorePattern: ^_
+      varsIgnorePattern: ^_
+  no-console:
+    - error
+  no-var:
+    - error
+  prefer-const:
+    - error
+  prefer-arrow-callback:
+    - error
+  prefer-rest-params:
+    - warn
+  prefer-spread:
+    - warn
+  prefer-template:
+    - warn
+  prefer-destructuring:
+    - warn
+  prefer-promise-reject-errors:
+    - warn
+  camelcase:
+    - warn
+  '@typescript-eslint/prefer-includes':
+    - warn
+  '@typescript-eslint/prefer-optional-chain':
+    - warn
+  '@typescript-eslint/prefer-nullish-coalescing':
+    - warn
+  '@typescript-eslint/prefer-readonly':
+    - warn
+  # '@typescript-eslint/prefer-readonly-parameter-types':
+  #  - warn
+  '@typescript-eslint/prefer-reduce-type-parameter':
+    - warn
+  '@typescript-eslint/prefer-string-starts-ends-with':
+    - warn
